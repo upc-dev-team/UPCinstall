@@ -4,7 +4,7 @@ CONFIG_FILE='ultrapaycoin.conf'
 CONFIGFOLDER='/root/.ultrapaycoin'
 COIN_DAEMON='/usr/local/bin/ultrapaycoind'
 COIN_CLI='/usr/local/bin/ultrapaycoin-cli'
-COIN_REPO='https://github.com/upc-dev-team/UltraPayCoin/releases/download/1.0/ubuntu16.04-daemon.tar.gz'
+COIN_REPO='https://github.com/upc-dev-team/UltraPayCoin/releases/download/1.0.0.1/ubuntu16.04-daemon.tar.gz'
 COIN_NAME='UltraPayCoin'
 COIN_PORT=13333
 
