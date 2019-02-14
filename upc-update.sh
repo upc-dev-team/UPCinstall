@@ -4,7 +4,7 @@ CONFIG_FILE='ultrapaycoin.conf'
 CONFIGFOLDER='/root/.ultrapaycoin'
 COIN_DAEMON='/usr/local/bin/ultrapaycoind'
 COIN_CLI='/usr/local/bin/ultrapaycoin-cli'
-COIN_REPO='https://github.com/upc-dev-team/UltraPayCoin/releases/download/1.0.1.1/ubuntu16.04-daemon.tar.gz'
+COIN_REPO='https://github.com/upc-dev-team/UltraPayCoin/releases/download/1.0.0.2/ubuntu16.04-daemon.tar.gz'
 COIN_NAME='UltraPayCoin'
 COIN_PORT=13333
 
@@ -65,9 +65,9 @@ function compile_node() {
   wget --progress=bar:force $COIN_REPO 2>&1 | progressfilt
   compile_error
   COIN_ZIP=$(echo $COIN_REPO | awk -F'/' '{print $NF}')
-  COIN_VER=$(echo $COIN_ZIP | awk -F'/' '{print $NF}' | sed -n 's/.*\([0-9]\.[0-9]\.[0-9]\).*/\1/p')
+  COIN_VER=$(echo $COIN_REPO | sed -n 's/.*\([0-9]\.[0-9]\.[0-9]\.[0-9]\).*/\1/p')
   COIN_DIR=$(echo ${COIN_NAME,,}-$COIN_VER)
-  tar xvzf $COIN_ZIP --strip=2 ${COIN_DIR}/bin/${COIN_NAME,,}d ${COIN_DIR}/bin/${COIN_NAME,,}-cli>/dev/null 2>&1
+  tar xvzf $COIN_ZIP >/dev/null 2>&1
   compile_error
   rm -f $COIN_ZIP >/dev/null 2>&1
   cp ultrapaycoin* /usr/local/bin >/dev/null 2>&1
