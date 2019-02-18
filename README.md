@@ -1,6 +1,20 @@
 # UltraPayCoin
 Shell script to install a [UltraPayCoin Masternode](https://ultrapay.info/) on a Linux server running Ubuntu 16.04 . Use it on your own risk.
 
+## Installation of Libraries on VPS (using root user):
+```
+sudo su
+add-apt-repository ppa:bitcoin/bitcoin -y
+apt-get update 
+apt-get install -y build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils 
+apt-get install -y libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev 
+apt-get install -y libdb4.8-dev libdb4.8++-dev 
+apt-get install libminiupnpc-dev 
+apt-get install libzmq3-dev
+apt-get update
+```
+
+
 ***
 ## Installation (latest wallet version):
 ```
@@ -45,7 +59,7 @@ startmasternode "alias" "0" "MN1"
 ```
 ***
 
-## Usage:
+## Usage (on VPS):
 ```
 ultrapaycoin-cli getinfo
 ultrapaycoin-cli mnsync status
